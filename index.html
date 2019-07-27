@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my MVVM</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <div>
+                <span>{{hello}}</span>
+            </div>
+            <div>{{msg}}</div>
+        </div>
+    </div>
+    <script src="./src/index.js"></script>
+    <script>
+        const app = new MVVM({
+            $el: '#app',
+            data: {
+                msg: 'mvvm',
+                hello: 'david'
+            },
+        })
+        setTimeout(() => {
+            app.data.msg = 'change'
+        }, 2000)
+    </script>
+</body>
+
+</html>
